@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.ServiceModel.Web;
 using System.Text;
 
@@ -18,10 +19,22 @@ namespace EmployeeManagementService
             Employee emp = new Employee() { Id = id, Name = name };
             AddEmployee(emp);
         }
-        public void AddRemarks(Employee emp)
+
+        public void AddRemarks(int id, string remarkcontent)
         {
-            emp.remarkObject.Date = DateTime.Now;
-            emp.remarkObject.Remark = "Adding remark here";
+            if (employeeList.Exists(x => x.Id == id))
+            { 
+                Employee e = GetEmployeeDetails(id);
+                e.remarkObject = new Remarks();
+                e.remarkObject.Date = DateTime.Now;
+                e.remarkObject.Remark = remarkcontent;
+            }
+            else
+            {
+                   throw FaultException.CreateFault(
+                    MessageFault.CreateFault(
+                        new FaultCode("101"), "Employee Not in the Database"));
+            }
         }
 
         public List<Employee> GetAllEmployeeList()
