@@ -14,7 +14,7 @@ namespace EmployeeManagementService
         [OperationContract]
         void CreateNewEmployee(int id,String name);
         [OperationContract]
-        void AddRemarks(int id,String text);
+        void AddRemarks(Employee emp);
     }
     [DataContract]
     public class Employee

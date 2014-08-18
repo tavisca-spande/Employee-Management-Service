@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Consumer.EmployeeService {
+namespace EmployeeManagementServiceFixture.EmployeeManagementService {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,7 +29,7 @@ namespace Consumer.EmployeeService {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Consumer.EmployeeService.Remarks remarkObjectField;
+        private EmployeeManagementServiceFixture.EmployeeManagementService.Remarks remarkObjectField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -68,7 +68,7 @@ namespace Consumer.EmployeeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Consumer.EmployeeService.Remarks remarkObject {
+        public EmployeeManagementServiceFixture.EmployeeManagementService.Remarks remarkObject {
             get {
                 return this.remarkObjectField;
             }
@@ -152,7 +152,7 @@ namespace Consumer.EmployeeService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmployeeService.ICreateEmployeeAndAddRemarks")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmployeeManagementService.ICreateEmployeeAndAddRemarks")]
     public interface ICreateEmployeeAndAddRemarks {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/CreateNewEmployee", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/CreateNewEmployeeResponse")]
@@ -162,19 +162,19 @@ namespace Consumer.EmployeeService {
         System.Threading.Tasks.Task CreateNewEmployeeAsync(int id, string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarks", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarksResponse")]
-        void AddRemarks(Consumer.EmployeeService.Employee emp);
+        void AddRemarks(EmployeeManagementServiceFixture.EmployeeManagementService.Employee emp);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarks", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarksResponse")]
-        System.Threading.Tasks.Task AddRemarksAsync(Consumer.EmployeeService.Employee emp);
+        System.Threading.Tasks.Task AddRemarksAsync(EmployeeManagementServiceFixture.EmployeeManagementService.Employee emp);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICreateEmployeeAndAddRemarksChannel : Consumer.EmployeeService.ICreateEmployeeAndAddRemarks, System.ServiceModel.IClientChannel {
+    public interface ICreateEmployeeAndAddRemarksChannel : EmployeeManagementServiceFixture.EmployeeManagementService.ICreateEmployeeAndAddRemarks, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CreateEmployeeAndAddRemarksClient : System.ServiceModel.ClientBase<Consumer.EmployeeService.ICreateEmployeeAndAddRemarks>, Consumer.EmployeeService.ICreateEmployeeAndAddRemarks {
+    public partial class CreateEmployeeAndAddRemarksClient : System.ServiceModel.ClientBase<EmployeeManagementServiceFixture.EmployeeManagementService.ICreateEmployeeAndAddRemarks>, EmployeeManagementServiceFixture.EmployeeManagementService.ICreateEmployeeAndAddRemarks {
         
         public CreateEmployeeAndAddRemarksClient() {
         }
@@ -203,45 +203,45 @@ namespace Consumer.EmployeeService {
             return base.Channel.CreateNewEmployeeAsync(id, name);
         }
         
-        public void AddRemarks(Consumer.EmployeeService.Employee emp) {
+        public void AddRemarks(EmployeeManagementServiceFixture.EmployeeManagementService.Employee emp) {
             base.Channel.AddRemarks(emp);
         }
         
-        public System.Threading.Tasks.Task AddRemarksAsync(Consumer.EmployeeService.Employee emp) {
+        public System.Threading.Tasks.Task AddRemarksAsync(EmployeeManagementServiceFixture.EmployeeManagementService.Employee emp) {
             return base.Channel.AddRemarksAsync(emp);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmployeeService.IRetrieve")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmployeeManagementService.IRetrieve")]
     public interface IRetrieve {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/GetAllEmployeeList", ReplyAction="http://tempuri.org/IRetrieve/GetAllEmployeeListResponse")]
-        Consumer.EmployeeService.Employee[] GetAllEmployeeList();
+        EmployeeManagementServiceFixture.EmployeeManagementService.Employee[] GetAllEmployeeList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/GetAllEmployeeList", ReplyAction="http://tempuri.org/IRetrieve/GetAllEmployeeListResponse")]
-        System.Threading.Tasks.Task<Consumer.EmployeeService.Employee[]> GetAllEmployeeListAsync();
+        System.Threading.Tasks.Task<EmployeeManagementServiceFixture.EmployeeManagementService.Employee[]> GetAllEmployeeListAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchByName", ReplyAction="http://tempuri.org/IRetrieve/SearchByNameResponse")]
-        Consumer.EmployeeService.Employee SearchByName(string Name);
+        EmployeeManagementServiceFixture.EmployeeManagementService.Employee SearchByName(string Name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchByName", ReplyAction="http://tempuri.org/IRetrieve/SearchByNameResponse")]
-        System.Threading.Tasks.Task<Consumer.EmployeeService.Employee> SearchByNameAsync(string Name);
+        System.Threading.Tasks.Task<EmployeeManagementServiceFixture.EmployeeManagementService.Employee> SearchByNameAsync(string Name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchById", ReplyAction="http://tempuri.org/IRetrieve/SearchByIdResponse")]
-        Consumer.EmployeeService.Employee SearchById(int Id);
+        EmployeeManagementServiceFixture.EmployeeManagementService.Employee SearchById(int Id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetrieve/SearchById", ReplyAction="http://tempuri.org/IRetrieve/SearchByIdResponse")]
-        System.Threading.Tasks.Task<Consumer.EmployeeService.Employee> SearchByIdAsync(int Id);
+        System.Threading.Tasks.Task<EmployeeManagementServiceFixture.EmployeeManagementService.Employee> SearchByIdAsync(int Id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRetrieveChannel : Consumer.EmployeeService.IRetrieve, System.ServiceModel.IClientChannel {
+    public interface IRetrieveChannel : EmployeeManagementServiceFixture.EmployeeManagementService.IRetrieve, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RetrieveClient : System.ServiceModel.ClientBase<Consumer.EmployeeService.IRetrieve>, Consumer.EmployeeService.IRetrieve {
+    public partial class RetrieveClient : System.ServiceModel.ClientBase<EmployeeManagementServiceFixture.EmployeeManagementService.IRetrieve>, EmployeeManagementServiceFixture.EmployeeManagementService.IRetrieve {
         
         public RetrieveClient() {
         }
@@ -262,27 +262,27 @@ namespace Consumer.EmployeeService {
                 base(binding, remoteAddress) {
         }
         
-        public Consumer.EmployeeService.Employee[] GetAllEmployeeList() {
+        public EmployeeManagementServiceFixture.EmployeeManagementService.Employee[] GetAllEmployeeList() {
             return base.Channel.GetAllEmployeeList();
         }
         
-        public System.Threading.Tasks.Task<Consumer.EmployeeService.Employee[]> GetAllEmployeeListAsync() {
+        public System.Threading.Tasks.Task<EmployeeManagementServiceFixture.EmployeeManagementService.Employee[]> GetAllEmployeeListAsync() {
             return base.Channel.GetAllEmployeeListAsync();
         }
         
-        public Consumer.EmployeeService.Employee SearchByName(string Name) {
+        public EmployeeManagementServiceFixture.EmployeeManagementService.Employee SearchByName(string Name) {
             return base.Channel.SearchByName(Name);
         }
         
-        public System.Threading.Tasks.Task<Consumer.EmployeeService.Employee> SearchByNameAsync(string Name) {
+        public System.Threading.Tasks.Task<EmployeeManagementServiceFixture.EmployeeManagementService.Employee> SearchByNameAsync(string Name) {
             return base.Channel.SearchByNameAsync(Name);
         }
         
-        public Consumer.EmployeeService.Employee SearchById(int Id) {
+        public EmployeeManagementServiceFixture.EmployeeManagementService.Employee SearchById(int Id) {
             return base.Channel.SearchById(Id);
         }
         
-        public System.Threading.Tasks.Task<Consumer.EmployeeService.Employee> SearchByIdAsync(int Id) {
+        public System.Threading.Tasks.Task<EmployeeManagementServiceFixture.EmployeeManagementService.Employee> SearchByIdAsync(int Id) {
             return base.Channel.SearchByIdAsync(Id);
         }
     }

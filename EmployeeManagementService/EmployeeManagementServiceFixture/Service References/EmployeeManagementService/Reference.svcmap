@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e93f96d3-1781-4c3c-90fe-270aa3cf57b8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49358/CreateEmployee.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CreateEmployee.xsd" MetadataType="Schema" ID="e9074bf5-0745-48e5-bdef-d99d5bb219da" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd1" />
+    <MetadataFile FileName="CreateEmployee.wsdl" MetadataType="Wsdl" ID="81169d57-7b7a-42c7-a9f7-2b357983c0ae" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?wsdl" />
+    <MetadataFile FileName="CreateEmployee1.xsd" MetadataType="Schema" ID="bc6b82b9-070f-413a-9d74-0d38b998f1b0" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd2" />
+    <MetadataFile FileName="CreateEmployee.disco" MetadataType="Disco" ID="2bdb09d4-a587-4337-b613-ca782d9387c3" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?disco" />
+    <MetadataFile FileName="CreateEmployee2.xsd" MetadataType="Schema" ID="b2d2b52f-0040-4894-bd46-beb6899783f6" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -16,24 +16,37 @@ namespace EmployeeManagementService
         
         public void CreateNewEmployee(int id,string name)
         {
-            Employee emp = new Employee() { Id = id, Name = name };
-            AddEmployee(emp);
+            try
+            {
+                if (employeeList.Exists(x => x.Id == id))
+                {
+                    throw new FaultException();
+                }
+                else
+                {
+                    Employee emp = new Employee() { Id = id, Name = name };
+                    employeeList.Add(emp);
+                }
+            }
+            catch (FaultException)
+            {
+                throw new FaultException(new FaultReason("Given Id already exists!!!"), new FaultCode("Duplicate Id"));
+            }
         }
 
-        public void AddRemarks(int id, string remarkcontent)
+        public void AddRemarks(Employee emp)
         {
-            if (employeeList.Exists(x => x.Id == id))
-            { 
-                Employee e = GetEmployeeDetails(id);
-                e.remarkObject = new Remarks();
-                e.remarkObject.Date = DateTime.Now;
-                e.remarkObject.Remark = remarkcontent;
+            if (emp != null)
+            {
+                emp.remarkObject = new Remarks();
+                emp.remarkObject.Date = DateTime.Now;
+                emp.remarkObject.Remark = "added a remark";
             }
             else
             {
-                   throw FaultException.CreateFault(
-                    MessageFault.CreateFault(
-                        new FaultCode("101"), "Employee Not in the Database"));
+                throw FaultException.CreateFault(
+                      MessageFault.CreateFault(
+                           new FaultCode("Valid Input"), "Enter valid ID"));
             }
         }
 
@@ -51,10 +64,7 @@ namespace EmployeeManagementService
         {
              return employeeList.Find(x => x.Id ==id );
         }
-        public void AddEmployee(Employee emp)
-        {
-            employeeList.Add(emp);
-        }
+       
     }
 }
 
