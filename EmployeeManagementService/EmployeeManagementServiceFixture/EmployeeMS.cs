@@ -16,8 +16,8 @@ namespace EmployeeManagementServiceFixture
         {      
             try
             {
-                client.CreateNewEmployee(101, "Swapnil");
-                client.CreateNewEmployee(101, "Anuj");
+                client.CreateNewEmployee(111, "Swapnil");
+                client.CreateNewEmployee(111, "Anuj");
             }
             catch (FaultException fault)
             {
@@ -31,8 +31,8 @@ namespace EmployeeManagementServiceFixture
             int id = 100;
             try
             {
-                Employee employee = rclient.SearchById(id);
-                client.AddRemarks(employee);
+                
+                client.AddRemarks(id);
             }
             catch (FaultException fault)
             {
@@ -43,13 +43,53 @@ namespace EmployeeManagementServiceFixture
         [TestMethod]
         public void AddingEmployeeDetails()
         {
-
-            int id = 1012;
+            client.ClearList();
+            int id = 101;
             string name = "Swapnil";
             Employee e = new Employee();
             client.CreateNewEmployee(id, name);
-            e = rclient.SearchById(1011);         
-            Assert.AreEqual(e.Id, 1011);
+            e = rclient.SearchById(101);         
+            Assert.AreEqual(e.Id, 101);
+        }
+
+        [TestMethod]
+        public void GettingListOfAllEmployees()
+        {
+            client.ClearList();
+            client.CreateNewEmployee(101, "swap");
+            var list = rclient.GetAllEmployeeList();
+            Assert.AreEqual(list.Length, 1);
+        }
+
+        [TestMethod]
+        public void GetEmployeesWithRemarks()
+        {
+            client.ClearList();
+            client.CreateNewEmployee(1001, "abc");
+            client.CreateNewEmployee(1002, "xyz");
+         
+            client.AddRemarks(1001);
+            var list = rclient.GetAllEmployeesWithRemarks();
+            Assert.AreEqual(list.Length, 1);
+        }
+
+        [TestMethod]
+        public void GetNonExistingEmployeeDetails()
+        {
+            client.ClearList();
+            client.CreateNewEmployee(101, "swap");
+            var emp = rclient.SearchById(102);
+            Assert.AreEqual(emp, null);
+        }
+
+        [TestMethod]
+        public void SearchEmployeeDetailsById()
+        {
+            client.ClearList();
+            client.CreateNewEmployee(101, "swap");
+            client.CreateNewEmployee(110, "swapnil");
+            var emp = rclient.SearchById(101);
+            Assert.AreEqual(emp.Name, "swap");
         }
        
     }

@@ -172,6 +172,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICreateEmployeeAndAddRemarks_ClearList_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICreateEmployeeAndAddRemarks_ClearList_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IRetrieve_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -382,6 +420,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetrieve_GetAllEmployeesWithRemarks_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetrieve_GetAllEmployeesWithRemarks_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49358/CreateEmployee.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -401,6 +477,12 @@
   <wsdl:message name="ICreateEmployeeAndAddRemarks_AddRemarks_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddRemarksResponse" />
   </wsdl:message>
+  <wsdl:message name="ICreateEmployeeAndAddRemarks_ClearList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearList" />
+  </wsdl:message>
+  <wsdl:message name="ICreateEmployeeAndAddRemarks_ClearList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearListResponse" />
+  </wsdl:message>
   <wsdl:message name="IRetrieve_GetAllEmployeeList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllEmployeeList" />
   </wsdl:message>
@@ -419,6 +501,12 @@
   <wsdl:message name="IRetrieve_SearchById_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IRetrieve_GetAllEmployeesWithRemarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmployeesWithRemarks" />
+  </wsdl:message>
+  <wsdl:message name="IRetrieve_GetAllEmployeesWithRemarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmployeesWithRemarksResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICreateEmployeeAndAddRemarks">
     <wsdl:operation name="CreateNewEmployee">
       <wsdl:input wsaw:Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/CreateNewEmployee" message="tns:ICreateEmployeeAndAddRemarks_CreateNewEmployee_InputMessage" />
@@ -427,6 +515,10 @@
     <wsdl:operation name="AddRemarks">
       <wsdl:input wsaw:Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarks" message="tns:ICreateEmployeeAndAddRemarks_AddRemarks_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarksResponse" message="tns:ICreateEmployeeAndAddRemarks_AddRemarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearList" message="tns:ICreateEmployeeAndAddRemarks_ClearList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearListResponse" message="tns:ICreateEmployeeAndAddRemarks_ClearList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRetrieve">
@@ -441,6 +533,10 @@
     <wsdl:operation name="SearchById">
       <wsdl:input wsaw:Action="http://tempuri.org/IRetrieve/SearchById" message="tns:IRetrieve_SearchById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRetrieve/SearchByIdResponse" message="tns:IRetrieve_SearchById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployeesWithRemarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRetrieve/GetAllEmployeesWithRemarks" message="tns:IRetrieve_GetAllEmployeesWithRemarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRetrieve/GetAllEmployeesWithRemarksResponse" message="tns:IRetrieve_GetAllEmployeesWithRemarks_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_ICreateEmployeeAndAddRemarks" type="tns:ICreateEmployeeAndAddRemarks">
@@ -465,6 +561,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ICreateEmployeeAndAddRemarks_AddRemarks_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearList">
+      <soap12:operation soapAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearList" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICreateEmployeeAndAddRemarks_ClearList_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICreateEmployeeAndAddRemarks_ClearList_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -505,6 +612,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllEmployeesWithRemarks">
+      <soap12:operation soapAction="http://tempuri.org/IRetrieve/GetAllEmployeesWithRemarks" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetrieve_GetAllEmployeesWithRemarks_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetrieve_GetAllEmployeesWithRemarks_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CreateEmployee">
     <wsdl:port name="WSHttpBinding_ICreateEmployeeAndAddRemarks" binding="tns:WSHttpBinding_ICreateEmployeeAndAddRemarks">
@@ -512,7 +630,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:49358/CreateEmployee.svc</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>spande@pune.tavisca.com</Upn>
+          <Upn>Swapnil-PC\Swapnil</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -521,7 +639,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:49358/CreateEmployee.svc/ws</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>spande@pune.tavisca.com</Upn>
+          <Upn>Swapnil-PC\Swapnil</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

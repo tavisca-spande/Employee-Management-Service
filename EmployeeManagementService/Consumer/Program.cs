@@ -80,18 +80,18 @@ namespace Consumer
                         
                         break;
                     case 5 :
-                         var list = rclient.GetAllEmployeeList();
-                         foreach (Employee e in list)
-                         {
-                             Console.WriteLine("Employee Id :"+e.Id);
-                             Console.WriteLine("Employee Name :"+e.Name);
-                             if (e.remarkObject != null)
-                             {
-                                 Console.WriteLine("Remark :" + e.remarkObject.Remark);
-                                 Console.WriteLine("Date :" + e.remarkObject.Date);
-                             }
-                             Console.WriteLine("\n");
-                         }
+                         //var list = rclient.GetAllEmployeeList();
+                         //foreach (Employee e in list)
+                         //{
+                         //    Console.WriteLine("Employee Id :"+e.Id);
+                         //    Console.WriteLine("Employee Name :"+e.Name);
+                         //    if (e.remarkObject != null)
+                         //    {
+                         //        Console.WriteLine("Remark :" + e.remarkObject.Remark);
+                         //        Console.WriteLine("Date :" + e.remarkObject.Date);
+                         //    }
+                         //    Console.WriteLine("\n");
+                         //}
                         break;
 
                 }

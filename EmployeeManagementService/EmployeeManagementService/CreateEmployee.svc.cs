@@ -18,7 +18,7 @@ namespace EmployeeManagementService
         {
             try
             {
-                if (employeeList.Exists(x => x.Id == id))
+                if (employeeList.Exists(emp => emp.Id == id))
                 {
                     throw new FaultException();
                 }
@@ -34,13 +34,13 @@ namespace EmployeeManagementService
             }
         }
 
-        public void AddRemarks(Employee emp)
+        public void AddRemarks(int id)
         {
+            var emp = employeeList.FirstOrDefault(e => e.Id.Equals(id));
             if (emp != null)
             {
-                emp.remarkObject = new Remarks();
-                emp.remarkObject.Date = DateTime.Now;
-                emp.remarkObject.Remark = "added a remark";
+                employeeList.Where(employee => employee.Id == id).First().Remark = "some remark";
+                employeeList.Where(employee => employee.Id == id).First().Date = DateTime.Now;
             }
             else
             {
@@ -57,12 +57,28 @@ namespace EmployeeManagementService
 
         public Employee GetEmployeeDetails(string Name)
         {
-            return employeeList.Find(x => x.Name == Name);
+            return employeeList.Find(emp => emp.Name == Name);
         }
 
         public Employee GetEmployeeDetails(int id)
         {
-             return employeeList.Find(x => x.Id ==id );
+             return employeeList.Find(emp => emp.Id ==id );
+        }
+
+        public void ClearList()
+        {
+            employeeList.Clear();
+        }
+
+        public List<Employee> GetAllEmployeesWithRemarks()
+        {
+            List<Employee> _temp = new List<Employee>();
+            foreach (var emp in employeeList)
+            {
+                if (emp.Remark != null)
+                    _temp.Add(emp);
+            }
+            return _temp;
         }
        
     }
