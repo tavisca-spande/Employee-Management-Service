@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EmployeeDataBase>
+  <AddEmployee>
+    <Id>20</Id>
+    <Name>Swapnil</Name>
+  </AddEmployee>
+  <AddRemarks>
+    <Id>1001</Id>
+    <RemarkContent>
+      Added a Remark
+    </RemarkContent>
+  </AddRemarks>
+  <NegativeID>
+    <Id>-1001</Id>
+    <Name>Swapnil</Name>
+  </NegativeID>
+  <NameSpecialCharacters>
+    <Id>1001</Id>
+    <Name>Swapnil123##</Name>
+  </NameSpecialCharacters>
+</EmployeeDataBase>
