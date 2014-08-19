@@ -15,7 +15,8 @@ namespace EmployeeManagementService
         [OperationContract]
         List<Employee> GetAllEmployeeList();
         [OperationContract(Name = "SearchByName")]
-        Employee GetEmployeeDetails(String Name);
+        List<Employee> GetEmployeeDetails(String Name);
+
         [OperationContract(Name = "SearchById")]
         Employee GetEmployeeDetails(int Id);
         [OperationContract]

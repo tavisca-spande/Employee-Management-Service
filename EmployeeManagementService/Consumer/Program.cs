@@ -53,10 +53,10 @@ namespace Consumer
                         break;
                     case 3:
                         Console.WriteLine("Enter the Employee-Name : ");
-                        name = Console.ReadLine();
-                        emp = rclient.SearchByName(name);
-                        Console.WriteLine(emp.Id);
-                        Console.WriteLine(emp.Name+"\n");
+                        //name = Console.ReadLine();
+                        //emp = rclient.SearchByName(name);
+                        //Console.WriteLine(emp.Id);
+                        //Console.WriteLine(emp.Name+"\n");
                         break;
                     case 4:
                         Console.WriteLine("Enter the Employee-ID : ");

@@ -14,7 +14,7 @@ namespace EmployeeManagementService
         [OperationContract]
         void CreateNewEmployee(int id,String name);
         [OperationContract]
-        void AddRemarks(int id);
+        void AddRemarks(int id,String text);
         [OperationContract]
         void ClearList();
     }
@@ -26,11 +26,17 @@ namespace EmployeeManagementService
         [DataMember]
         public string Name { get; set;}
         [DataMember]
+        public Remark remarkObject;
+    }
+
+     [DataContract]
+    public class Remark
+    {
+        [DataMember]
         public DateTime Date { get; set; }
         [DataMember]
-        public string Remark { get; set; }
+        public string remark { get; set; }
     }
-    
 
 
 }

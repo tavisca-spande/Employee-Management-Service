@@ -9,11 +9,11 @@ namespace EmployeeManagementServiceFixture
     public class EmployeeMS
     {
         CreateEmployeeAndAddRemarksClient client = new CreateEmployeeAndAddRemarksClient();
-        RetrieveClient rclient = new RetrieveClient();
+        RetrieveClient clientForRetrievingData = new RetrieveClient();
 
         [TestMethod]
         public void AddEmployeeWithSameId()
-        {      
+        {
             try
             {
                 client.CreateNewEmployee(111, "Swapnil");
@@ -23,21 +23,27 @@ namespace EmployeeManagementServiceFixture
             {
                 Assert.AreEqual(fault.Code.Name, "Duplicate Id");
             }
+            finally
+            {
+                client.Close();
+            }
         }
 
         [TestMethod]
         public void AddRemarksToNonExistingEmployee()
         {
             int id = 100;
+            client.ClearList();
             try
             {
-                
-                client.AddRemarks(id);
+       
+                client.AddRemarks(id,"Added some remark");
             }
             catch (FaultException fault)
             {
                 Assert.AreEqual(fault.Code.Name, "Valid Input");
             }
+            client.Close();
         }
 
         [TestMethod]
@@ -48,7 +54,7 @@ namespace EmployeeManagementServiceFixture
             string name = "Swapnil";
             Employee e = new Employee();
             client.CreateNewEmployee(id, name);
-            e = rclient.SearchById(101);         
+            e = clientForRetrievingData.SearchById(101);         
             Assert.AreEqual(e.Id, 101);
         }
 
@@ -57,7 +63,7 @@ namespace EmployeeManagementServiceFixture
         {
             client.ClearList();
             client.CreateNewEmployee(101, "swap");
-            var list = rclient.GetAllEmployeeList();
+            var list = clientForRetrievingData.GetAllEmployeeList();
             Assert.AreEqual(list.Length, 1);
         }
 
@@ -68,8 +74,8 @@ namespace EmployeeManagementServiceFixture
             client.CreateNewEmployee(1001, "abc");
             client.CreateNewEmployee(1002, "xyz");
          
-            client.AddRemarks(1001);
-            var list = rclient.GetAllEmployeesWithRemarks();
+            client.AddRemarks(1001,"Added some remark");
+            var list = clientForRetrievingData.GetAllEmployeesWithRemarks();
             Assert.AreEqual(list.Length, 1);
         }
 
@@ -78,19 +84,38 @@ namespace EmployeeManagementServiceFixture
         {
             client.ClearList();
             client.CreateNewEmployee(101, "swap");
-            var emp = rclient.SearchById(102);
+            var emp = clientForRetrievingData.SearchById(102);
             Assert.AreEqual(emp, null);
         }
 
         [TestMethod]
-        public void SearchEmployeeDetailsById()
+        public void GetEmployeeDetailsById()
         {
             client.ClearList();
             client.CreateNewEmployee(101, "swap");
             client.CreateNewEmployee(110, "swapnil");
-            var emp = rclient.SearchById(101);
+            var emp = clientForRetrievingData.SearchById(101);
             Assert.AreEqual(emp.Name, "swap");
         }
-       
+        [TestMethod]
+        public void GetEmployeeDetailsByName()
+        {
+            client.ClearList();
+            client.CreateNewEmployee(101, "swap");
+            client.CreateNewEmployee(110, "swapnil");
+            var empList = clientForRetrievingData.SearchByName("swapnil");
+            Assert.AreEqual(empList.Length,1);
+        }
+
+
+        [TestMethod]
+        public void SearchNonExistingEmployeeByName()
+        {
+            client.ClearList();
+            client.CreateNewEmployee(101, "swapnil");
+            client.CreateNewEmployee(110, "swapnil");
+            var empList = clientForRetrievingData.SearchByName("swap");
+            Assert.AreEqual(empList.Length, 0);
+        }
     }
 }

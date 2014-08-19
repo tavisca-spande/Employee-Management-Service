@@ -25,6 +25,7 @@ namespace EmployeeManagementService
                 else
                 {
                     Employee emp = new Employee() { Id = id, Name = name };
+                    emp.remarkObject = new Remark();
                     employeeList.Add(emp);
                 }
             }
@@ -34,20 +35,33 @@ namespace EmployeeManagementService
             }
         }
 
-        public void AddRemarks(int id)
+        public void AddRemarks(int id,String text)
         {
-            var emp = employeeList.FirstOrDefault(e => e.Id.Equals(id));
-            if (emp != null)
+
+            try
             {
-                employeeList.Where(employee => employee.Id == id).First().Remark = "some remark";
-                employeeList.Where(employee => employee.Id == id).First().Date = DateTime.Now;
+                var emp = GetEmployeeDetails(id);
+                if (emp != null)
+                {
+                    if (emp.remarkObject == null)
+                    {
+                        emp.remarkObject = new Remark();
+                        emp.remarkObject.Date = DateTime.Now;
+                        emp.remarkObject.remark = text;
+                    }
+                    else
+                    {
+                        emp.remarkObject.remark += " " + text;
+                        emp.remarkObject.Date = DateTime.Now;
+                    }
+                }
             }
-            else
+            catch (FaultException f)
             {
-                throw FaultException.CreateFault(
-                      MessageFault.CreateFault(
-                           new FaultCode("Valid Input"), "Enter valid ID"));
+                throw new FaultException(new FaultReason("Given Id already exists!!!"), new FaultCode("Duplicate Id"));         
             }
+            
+
         }
 
         public List<Employee> GetAllEmployeeList()
@@ -55,9 +69,9 @@ namespace EmployeeManagementService
             return employeeList;
         }
 
-        public Employee GetEmployeeDetails(string Name)
+        public List<Employee> GetEmployeeDetails(string Name)
         {
-            return employeeList.Find(emp => emp.Name == Name);
+            return employeeList.FindAll(emp => emp.Name == Name);
         }
 
         public Employee GetEmployeeDetails(int id)
@@ -75,7 +89,7 @@ namespace EmployeeManagementService
             List<Employee> _temp = new List<Employee>();
             foreach (var emp in employeeList)
             {
-                if (emp.Remark != null)
+                if (emp.remarkObject.remark != null)
                     _temp.Add(emp);
             }
             return _temp;
