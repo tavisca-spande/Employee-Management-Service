@@ -113,23 +113,7 @@ namespace Consumer
 
 
 
-/*
- *   [TestMethod]
-        public void AddRemarkToTheNonExistingEmployee(int id)
-        {
-            id = 567;
-            try
-            {
-                Employee employee = rclient.SearchById(id);
-                client.AddRemarks(employee);
-            }
-            catch (FaultException fault)
-            {
-                Assert.AreEqual(fault.Reason, "Enter valid Id");
-            }
-        }
-        
- * */
+
 
 
 

@@ -57,6 +57,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="ValidationForEMS">
+      <HintPath>..\ValidationForEMS\bin\Debug\ValidationForEMS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreateEmployee.svc" />

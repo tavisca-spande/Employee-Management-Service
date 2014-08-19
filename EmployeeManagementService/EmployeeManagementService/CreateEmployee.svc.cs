@@ -4,12 +4,13 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Web;
 using System.Text;
 
 namespace EmployeeManagementService
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Single)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class CreateEmployee : ICreateEmployeeAndAddRemarks,IRetrieve
     {
         public List<Employee> employeeList= new List<Employee>();
@@ -45,13 +46,12 @@ namespace EmployeeManagementService
                 {
                     if (emp.remarkObject == null)
                     {
-                        emp.remarkObject = new Remark();
                         emp.remarkObject.Date = DateTime.Now;
-                        emp.remarkObject.remark = text;
+                        emp.remarkObject.RemarkContent = text;
                     }
                     else
                     {
-                        emp.remarkObject.remark += " " + text;
+                        emp.remarkObject.RemarkContent += " " + text;
                         emp.remarkObject.Date = DateTime.Now;
                     }
                 }
@@ -76,7 +76,7 @@ namespace EmployeeManagementService
 
         public Employee GetEmployeeDetails(int id)
         {
-             return employeeList.Find(emp => emp.Id ==id );
+             return employeeList.Find(emp => emp.Id ==id);
         }
 
         public void ClearList()
@@ -89,12 +89,11 @@ namespace EmployeeManagementService
             List<Employee> _temp = new List<Employee>();
             foreach (var emp in employeeList)
             {
-                if (emp.remarkObject.remark != null)
+                if (emp.remarkObject.RemarkContent != null)
                     _temp.Add(emp);
             }
             return _temp;
         }
-       
     }
 }
 

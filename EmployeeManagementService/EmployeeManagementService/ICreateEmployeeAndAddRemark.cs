@@ -35,7 +35,7 @@ namespace EmployeeManagementService
         [DataMember]
         public DateTime Date { get; set; }
         [DataMember]
-        public string remark { get; set; }
+        public string RemarkContent { get; set; }
     }
 
 

@@ -32,12 +32,12 @@ namespace EmployeeManagementServiceFixture
         [TestMethod]
         public void AddRemarksToNonExistingEmployee()
         {
-            int id = 100;
+            int _id = 100;
             client.ClearList();
             try
             {
        
-                client.AddRemarks(id,"Added some remark");
+                client.AddRemarks(_id,"Added some remark");
             }
             catch (FaultException fault)
             {
@@ -52,10 +52,10 @@ namespace EmployeeManagementServiceFixture
             client.ClearList();
             int id = 101;
             string name = "Swapnil";
-            Employee e = new Employee();
+            Employee emp = new Employee();
             client.CreateNewEmployee(id, name);
-            e = clientForRetrievingData.SearchById(101);         
-            Assert.AreEqual(e.Id, 101);
+            emp = clientForRetrievingData.SearchById(101);         
+            Assert.AreEqual(emp.Id, 101);
         }
 
         [TestMethod]
@@ -63,8 +63,8 @@ namespace EmployeeManagementServiceFixture
         {
             client.ClearList();
             client.CreateNewEmployee(101, "swap");
-            var list = clientForRetrievingData.GetAllEmployeeList();
-            Assert.AreEqual(list.Length, 1);
+            var _list = clientForRetrievingData.GetAllEmployeeList();
+            Assert.AreEqual(_list.Length, 1);
         }
 
         [TestMethod]
@@ -116,6 +116,35 @@ namespace EmployeeManagementServiceFixture
             client.CreateNewEmployee(110, "swapnil");
             var empList = clientForRetrievingData.SearchByName("swap");
             Assert.AreEqual(empList.Length, 0);
+        }
+
+        [TestMethod]
+        public void AddingEmployeeDetailsWithNegativeID()
+        {
+            client.ClearList();
+            try
+            {
+            client.CreateNewEmployee(-100, "swapnil");
+            }
+            catch(FaultException fault)
+            {
+                Assert.AreEqual(fault.Code.Name, "ID Negative");
+            }    
+        }
+
+        [TestMethod]
+        public void AddingEmployeeDetailsWithNameHavingSpecialCharacters()
+        {
+            client.ClearList();
+            try
+            {
+                client.CreateNewEmployee(100, "Swapnil1234!!##"); 
+            }
+            catch (FaultException fault)
+            {
+                Assert.AreEqual(fault.Code.Name, "Name with Special characters");
+            }
+
         }
     }
 }

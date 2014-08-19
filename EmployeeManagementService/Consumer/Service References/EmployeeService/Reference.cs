@@ -103,7 +103,7 @@ namespace Consumer.EmployeeService {
         private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarkField;
+        private string RemarkContentField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -129,14 +129,14 @@ namespace Consumer.EmployeeService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remark {
+        public string RemarkContent {
             get {
-                return this.remarkField;
+                return this.RemarkContentField;
             }
             set {
-                if ((object.ReferenceEquals(this.remarkField, value) != true)) {
-                    this.remarkField = value;
-                    this.RaisePropertyChanged("remark");
+                if ((object.ReferenceEquals(this.RemarkContentField, value) != true)) {
+                    this.RemarkContentField = value;
+                    this.RaisePropertyChanged("RemarkContent");
                 }
             }
         }

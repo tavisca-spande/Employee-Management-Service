@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e93f96d3-1781-4c3c-90fe-270aa3cf57b8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="199c72a9-3c69-4c7c-a440-4cf16436fc57" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:49358/CreateEmployee.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CreateEmployee.xsd" MetadataType="Schema" ID="e9074bf5-0745-48e5-bdef-d99d5bb219da" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd1" />
-    <MetadataFile FileName="CreateEmployee.wsdl" MetadataType="Wsdl" ID="81169d57-7b7a-42c7-a9f7-2b357983c0ae" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?wsdl" />
-    <MetadataFile FileName="CreateEmployee1.xsd" MetadataType="Schema" ID="bc6b82b9-070f-413a-9d74-0d38b998f1b0" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd2" />
-    <MetadataFile FileName="CreateEmployee.disco" MetadataType="Disco" ID="2bdb09d4-a587-4337-b613-ca782d9387c3" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?disco" />
-    <MetadataFile FileName="CreateEmployee2.xsd" MetadataType="Schema" ID="b2d2b52f-0040-4894-bd46-beb6899783f6" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd0" />
+    <MetadataFile FileName="CreateEmployee.xsd" MetadataType="Schema" ID="d9a3a473-b887-41fc-81e3-5a0259539343" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd1" />
+    <MetadataFile FileName="CreateEmployee.wsdl" MetadataType="Wsdl" ID="d5c7961d-80fb-4ad2-8cef-e7b3baf3e687" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?wsdl" />
+    <MetadataFile FileName="CreateEmployee1.xsd" MetadataType="Schema" ID="c694045d-1464-463e-8292-addc5c2b5779" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd2" />
+    <MetadataFile FileName="CreateEmployee.disco" MetadataType="Disco" ID="e0e8a4e5-441f-451c-881f-4922a3cdb265" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?disco" />
+    <MetadataFile FileName="CreateEmployee2.xsd" MetadataType="Schema" ID="b946a4b1-4d2c-4720-aab9-b8825853c6f9" SourceId="1" SourceUrl="http://localhost:49358/CreateEmployee.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -17,7 +17,7 @@
   <xs:complexType name="Remark">
     <xs:sequence>
       <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemarkContent" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Remark" nillable="true" type="tns:Remark" />
