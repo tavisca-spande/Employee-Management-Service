@@ -16,7 +16,7 @@ namespace EmployeeManagementService
         [OperationContract]
         void AddRemarks(int id,String text);
         [OperationContract]
-        void ClearList();
+        void ClearEmployeeList();
     }
     [DataContract]
     public class Employee

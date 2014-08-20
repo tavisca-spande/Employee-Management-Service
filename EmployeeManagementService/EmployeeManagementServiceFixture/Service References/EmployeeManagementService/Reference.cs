@@ -167,11 +167,11 @@ namespace EmployeeManagementServiceFixture.EmployeeManagementService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarks", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/AddRemarksResponse")]
         System.Threading.Tasks.Task AddRemarksAsync(int id, string text);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearList", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearListResponse")]
-        void ClearList();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearEmployeeList", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearEmployeeListResponse")]
+        void ClearEmployeeList();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearList", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearListResponse")]
-        System.Threading.Tasks.Task ClearListAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearEmployeeList", ReplyAction="http://tempuri.org/ICreateEmployeeAndAddRemarks/ClearEmployeeListResponse")]
+        System.Threading.Tasks.Task ClearEmployeeListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -217,12 +217,12 @@ namespace EmployeeManagementServiceFixture.EmployeeManagementService {
             return base.Channel.AddRemarksAsync(id, text);
         }
         
-        public void ClearList() {
-            base.Channel.ClearList();
+        public void ClearEmployeeList() {
+            base.Channel.ClearEmployeeList();
         }
         
-        public System.Threading.Tasks.Task ClearListAsync() {
-            return base.Channel.ClearListAsync();
+        public System.Threading.Tasks.Task ClearEmployeeListAsync() {
+            return base.Channel.ClearEmployeeListAsync();
         }
     }
     

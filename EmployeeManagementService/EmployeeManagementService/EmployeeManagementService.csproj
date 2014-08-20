@@ -63,7 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreateEmployee.svc" />
-    <Content Include="EmployeeData.xml" />
+    <Content Include="EmployeeData.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

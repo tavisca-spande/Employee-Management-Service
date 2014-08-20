@@ -79,7 +79,7 @@ namespace EmployeeManagementService
              return employeeList.Find(emp => emp.Id ==id);
         }
 
-        public void ClearList()
+        public void ClearEmployeeList()
         {
             employeeList.Clear();
         }

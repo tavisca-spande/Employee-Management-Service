@@ -27,12 +27,12 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ClearList">
+  <xs:element name="ClearEmployeeList">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ClearListResponse">
+  <xs:element name="ClearEmployeeListResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
