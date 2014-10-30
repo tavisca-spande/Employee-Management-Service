@@ -30,6 +30,9 @@ namespace EmployeeManagementService
         public DateTime Date { get; set; }
         [DataMember]
           git config --global user.name "Your Name"
+
+          [OperationContract(Name = "SearchById")]
+        Employee GetEmployeeDetails(int Id);
         public string RemarkContent { get; set; }
     }
 
