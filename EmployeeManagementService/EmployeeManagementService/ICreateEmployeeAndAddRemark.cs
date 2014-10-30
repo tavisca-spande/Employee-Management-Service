@@ -11,12 +11,6 @@ namespace EmployeeManagementService
     [ServiceContract]
     public interface ICreateEmployeeAndAddRemarks
     {
-        [OperationContract]
-        void CreateNewEmployee(int id,String name);
-        [OperationContract]
-        void AddRemarks(int id,String text);
-        [OperationContract]
-        void ClearEmployeeList();
     }
     [DataContract]
     public class Employee
@@ -35,6 +29,7 @@ namespace EmployeeManagementService
         [DataMember]
         public DateTime Date { get; set; }
         [DataMember]
+          git config --global user.name "Your Name"
         public string RemarkContent { get; set; }
     }
 
