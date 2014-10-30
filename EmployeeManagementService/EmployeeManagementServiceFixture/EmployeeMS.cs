@@ -8,32 +8,6 @@ namespace EmployeeManagementServiceFixture
     [TestClass]
     public class EmployeeMS
     {
-        private TestContext _testContextInstance;
-        private static int _currentCount;
-        private static int _totalCount;
-        public TestContext TestContext
-        {
-            get { return _testContextInstance; }
-            set { _testContextInstance = value; }
-        }
-
-        CreateEmployeeAndAddRemarksClient client = new CreateEmployeeAndAddRemarksClient();
-        RetrieveClient clientForRetrievingData = new RetrieveClient();
-        int _id;
-        String _name;
-        const string _connectionString = @"D:\Webservice-employee management\Employee-Management-Service\EmployeeManagementService\EmployeeManagementService\EmployeeData.xml";
-
-        [TestInitialize]
-        public void initialize()
-        {
-            if (_totalCount == _currentCount)
-            {
-                client.ClearEmployeeList();
-                _currentCount = 0;
-                _totalCount = 0;
-            }
-        }
-
 
         [TestMethod]
         [DeploymentItem(_connectionString)]
