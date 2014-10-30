@@ -29,14 +29,6 @@ namespace EmployeeManagementService
         public Remark remarkObject;
     }
 
-     [DataContract]
-    public class Remark
-    {
-        [DataMember]
-        public DateTime Date { get; set; }
-        [DataMember]
-        public string RemarkContent { get; set; }
-    }
 
 
 }
